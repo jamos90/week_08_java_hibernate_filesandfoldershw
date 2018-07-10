@@ -1,18 +1,22 @@
 import models.File;
 import models.Folder;
+import models.Owner;
 import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertSame;
 
 public class FileTest {
     File file;
     Folder photos;
     Folder doucments;
+    Owner owner;
 
     @Before
     public void setUp(){
-        photos = new Folder("Holiday Photos");
+        owner = new Owner("James");
+        photos = new Folder("Holiday Photos",owner);
         file = new File("Photo_1",".jpg",2,photos);
     }
 
@@ -35,4 +39,5 @@ public class FileTest {
     public void hasAFolder(){
         assertEquals(photos,file.getFolder());
     }
+
 }

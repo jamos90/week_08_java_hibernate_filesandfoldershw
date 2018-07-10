@@ -12,7 +12,7 @@ public class Runner {
         ;
         Owner owner = new Owner("James");
 
-        Folder photos = new Folder("Holiday Photos");
+        Folder photos = new Folder("Holiday Photos",owner);
         DBHelper.save(photos);
 
         File file1 = new File("Photo_1",".jpg",33, photos);

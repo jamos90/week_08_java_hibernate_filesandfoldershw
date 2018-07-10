@@ -15,6 +15,9 @@ public class Owner {
         this.id = id;
         this.name = name;
     }
+
+    public Owner(){}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -33,5 +36,15 @@ public class Owner {
 
     public void setName(String name){
         this.name = name;
+    }
+
+    @OneToMany
+    @JoinColumn(name="owner")
+    public List<Folder> getFolders(){
+        return this.folders;
+    }
+
+    public void setFolders(List<Folder> folders){
+        this.folders = folders;
     }
 }
