@@ -17,4 +17,7 @@ public class Folder {
     }
 
 
+    public String getTitle() {
+        return this.title;
+    }
 }
