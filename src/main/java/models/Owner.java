@@ -38,8 +38,7 @@ public class Owner {
         this.name = name;
     }
 
-    @OneToMany
-    @JoinColumn(name="owner")
+    @OneToMany(mappedBy ="owner", fetch = FetchType.LAZY)
     public List<Folder> getFolders(){
         return this.folders;
     }

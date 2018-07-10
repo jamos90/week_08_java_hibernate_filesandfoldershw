@@ -1,5 +1,6 @@
 import db.DBFolder;
 import db.DBHelper;
+import db.DBOwner;
 import models.File;
 import models.Folder;
 import models.Owner;
@@ -15,6 +16,9 @@ public class Runner {
 
         Folder photos = new Folder("Holiday Photos",owner);
         DBHelper.save(photos);
+
+        Folder documents = new Folder("Documents", owner);
+        DBHelper.save(documents);
 
         File file1 = new File("Photo_1",".jpg",33, photos);
         DBHelper.save(file1);
@@ -32,6 +36,8 @@ public class Runner {
         File fileToFind2 = DBHelper.find(File.class, "Vietnam1");
 
         List<File> filesInFolder = DBFolder.getFiles(photos);
+
+        List<Folder> foldersInOwner = DBOwner.findAllFolders(owner);
 
 
     }
