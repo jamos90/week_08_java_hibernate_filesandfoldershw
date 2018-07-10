@@ -1,6 +1,11 @@
 package models;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.List;
+
+@Entity
+@Table(name="folders")
 
 public class Folder {
     private int id;
@@ -8,12 +13,20 @@ public class Folder {
     private List<File> files;
 
     public Folder(String title){
-        this.title = title;
         this.id = id;
+        this.title = title;
     }
 
     public Folder(){
 
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public void setId(int id){
+        this.id = id;
     }
 
 
