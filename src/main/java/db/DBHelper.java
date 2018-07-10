@@ -1,6 +1,7 @@
 package db;
 
 import org.hibernate.*;
+import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
 
@@ -63,4 +64,23 @@ public class DBHelper {
         }
         return  results;
     }
+
+    public static <T> T find(Class classType, int id){
+        session = HibernateUtil.getSessionFactory().openSession();
+        T result = null;
+        try{
+            Criteria cr = session.createCriteria(classType);
+            cr.add(Restrictions.eq("id",id));
+            result = (T)cr.uniqueResult();
+
+        } catch (HibernateException e){
+            transaction.rollback();
+        } finally {
+            session.close();
+        }
+
+        return result;
+    }
+
+
 }

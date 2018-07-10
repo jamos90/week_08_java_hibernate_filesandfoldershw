@@ -21,6 +21,8 @@ public class Runner {
 
         List<File> files = DBHelper.getALl(File.class);
 
+        File fileToFind = DBHelper.find(File.class,2);
+
 
     }
 }
