@@ -17,6 +17,8 @@ public class Runner {
         file1.setName("Vietnam1");
         DBHelper.update(file1);
 
+        DBHelper.delete(file2);
+
 
     }
 }
