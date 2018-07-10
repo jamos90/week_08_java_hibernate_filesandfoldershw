@@ -55,4 +55,8 @@ public class Folder {
     public Owner getOwner(){
         return this.owner;
     }
+
+    public void setOwner(Owner owner){
+        this.owner = owner;
+    }
 }

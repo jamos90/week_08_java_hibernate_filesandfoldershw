@@ -11,6 +11,7 @@ public class Runner {
     public static void main(String[] args){
         ;
         Owner owner = new Owner("James");
+        DBHelper.save(owner);
 
         Folder photos = new Folder("Holiday Photos",owner);
         DBHelper.save(photos);
