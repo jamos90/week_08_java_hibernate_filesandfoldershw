@@ -1,9 +1,8 @@
 package db;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+import org.hibernate.*;
+
+import java.util.List;
 
 public class DBHelper {
     private static Transaction transaction;
@@ -48,5 +47,20 @@ public class DBHelper {
         } finally {
             session.close();
         }
+    }
+
+    public static <T> List<T> getALl (Class classType){
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<T> results = null;
+        try{
+            Criteria cr =session.createCriteria(classType);
+            results = cr.list();
+
+        } catch (HibernateException e){
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return  results;
     }
 }

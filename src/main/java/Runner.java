@@ -2,6 +2,8 @@ import db.DBHelper;
 import models.File;
 import models.Folder;
 
+import java.util.List;
+
 public class Runner {
 
     public static void main(String[] args){
@@ -17,7 +19,7 @@ public class Runner {
         file1.setName("Vietnam1");
         DBHelper.update(file1);
 
-        DBHelper.delete(file2);
+        List<File> files = DBHelper.getALl(File.class);
 
 
     }
