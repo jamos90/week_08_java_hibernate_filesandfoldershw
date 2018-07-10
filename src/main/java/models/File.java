@@ -21,21 +21,35 @@ public class File {
 
     }
 
-
     public String getName() {
         return this.name;
     }
 
+    public void setName(String name){
+        this.name = name;
+    }
 
     public String getExtension() {
         return this.extension;
+    }
+
+    public void setExtension(String extension){
+        this.extension = extension;
     }
 
     public int getSize() {
         return this.size;
     }
 
+    public void setSize(int size){
+        this.size = size;
+    }
+
     public Folder getFolder() {
         return this.folder;
+    }
+
+    public void setFolder(Folder folder){
+        this.folder = folder;
     }
 }
