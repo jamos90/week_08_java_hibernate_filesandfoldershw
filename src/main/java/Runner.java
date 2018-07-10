@@ -14,5 +14,9 @@ public class Runner {
         File file2 = new File("Photo_2",".png",40,photos);
         DBHelper.save(file2);
 
+        file1.setName("Vietnam1");
+        DBHelper.update(file1);
+
+
     }
 }
