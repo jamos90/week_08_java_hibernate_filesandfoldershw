@@ -2,12 +2,16 @@ import db.DBFolder;
 import db.DBHelper;
 import models.File;
 import models.Folder;
+import models.Owner;
 
 import java.util.List;
 
 public class Runner {
 
     public static void main(String[] args){
+        ;
+        Owner owner = new Owner("James");
+
         Folder photos = new Folder("Holiday Photos");
         DBHelper.save(photos);
 
