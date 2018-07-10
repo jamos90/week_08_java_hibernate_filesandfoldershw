@@ -40,7 +40,7 @@ public class Folder {
     public void setTitle(String title){
         this.title = title;
     }
-    @OneToMany(mappedBy = "folder", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "folder", fetch = FetchType.EAGER)
     public List<File> getFiles(){
         return this.files;
     }
