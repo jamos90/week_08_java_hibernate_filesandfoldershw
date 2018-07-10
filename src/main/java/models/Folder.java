@@ -10,6 +10,11 @@ public class Folder {
     public Folder(String title){
         this.title = title;
         this.id = id;
+    }
+
+    public Folder(){
 
     }
+
+
 }

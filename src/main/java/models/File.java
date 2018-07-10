@@ -1,5 +1,7 @@
 package models;
 
+
+
 public class File {
     private int id;
     private String name;
@@ -20,4 +22,20 @@ public class File {
     }
 
 
+    public String getName() {
+        return this.name;
+    }
+
+
+    public String getExtension() {
+        return this.extension;
+    }
+
+    public int getSize() {
+        return this.size;
+    }
+
+    public Folder getFolder() {
+        return this.folder;
+    }
 }
