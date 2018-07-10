@@ -23,6 +23,8 @@ public class Runner {
 
         File fileToFind = DBHelper.find(File.class,2);
 
+        File fileToFind2 = DBHelper.find(File.class, "Vietnam1");
+
 
     }
 }

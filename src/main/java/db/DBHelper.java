@@ -82,5 +82,22 @@ public class DBHelper {
         return result;
     }
 
+    public static <T> T find(Class classType, String name){
+        session = HibernateUtil.getSessionFactory().openSession();
+        T result = null;
+        try{
+            Criteria cr = session.createCriteria(classType);
+            cr.add(Restrictions.eq("name",name));
+            result = (T)cr.uniqueResult();
+
+        } catch (HibernateException e){
+            transaction.rollback();
+        } finally {
+            session.close();
+        }
+
+        return result;
+    }
+
 
 }
