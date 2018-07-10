@@ -1,3 +1,4 @@
+import db.DBFolder;
 import db.DBHelper;
 import models.File;
 import models.Folder;
@@ -24,6 +25,8 @@ public class Runner {
         File fileToFind = DBHelper.find(File.class,2);
 
         File fileToFind2 = DBHelper.find(File.class, "Vietnam1");
+
+        List<File> filesInFolder = DBFolder.getFiles(photos);
 
 
     }
